@@ -8,8 +8,8 @@ typedef enum {
 GameScene currentScene = SCENE_TITLE;
 
 //Sizes
-const int screenWidth = 800;
-const int screenHeight = 450;
+int screenWidth = 800;
+int screenHeight = 450;
 
 //Version data
 float version = 1.0;
@@ -40,6 +40,9 @@ int main(void) {
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
+        screenWidth = GetScreenWidth();
+        screenHeight = GetScreenHeight();
+
         switch (currentScene) {
             case SCENE_TITLE:
                 if (IsKeyPressed(KEY_ENTER)) {
@@ -62,9 +65,9 @@ int main(void) {
             case SCENE_TITLE:
                 DrawText("Geometry Crays", CenterText(14, 30), 100, 30, WHITE);
                 DrawText("A port of Geometry Rays & Extensions", CenterText(14, 10) - 100, 150, 15, WHITE);
-                button(400 - 100, 180, 35, 180, "Play");
-                button(400 - 100, 225, 35, 180, "Editor/Online");
-                button(400 - 100, 270, 35, 180, "Extensions");
+                button(CenterText(-2.5, 180), 180, 35, 180, "Play");
+                button(CenterText(-2.5, 180), 225, 35, 180, "Editor/Online");
+                button(CenterText(-2.5, 180), 270, 35, 180, "Extensions");
                 break;
             
             case SCENE_LEVEL:
