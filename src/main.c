@@ -34,7 +34,7 @@ int button(int x, int y, int height, int width, char *text) {
 }
 
 int main(void) {
-    InitWindow(screenWidth, screenHeight, "Raylib Scene System");
+    InitWindow(screenWidth, screenHeight, "Geometry Crays");
 
 
     SetTargetFPS(60);
