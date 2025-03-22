@@ -34,8 +34,8 @@ int button(int x, int y, int height, int width, char *text) {
 }
 
 int main(void) {
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_VSYNC_HINT);
     InitWindow(screenWidth, screenHeight, "Geometry Crays");
-
 
     SetTargetFPS(60);
 
