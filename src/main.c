@@ -27,7 +27,7 @@ int scene(GameScene new) {
     currentScene = new;
 }
 
-int button(int x, int y, int height, int width, char *text, void func)
+int button(int x, int y, int height, int width, char *text)
 {
     DrawRectangle(x, y, width, height, GRAY);
     DrawText(text, x + 20, y + 10, 20, WHITE);
