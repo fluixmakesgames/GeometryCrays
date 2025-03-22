@@ -27,20 +27,18 @@ int scene(GameScene new) {
     currentScene = new;
 }
 
-int button(int x, int y, int height, int width, char *text)
-{
+int button(int x, int y, int height, int width, char *text) {
     DrawRectangle(x, y, width, height, GRAY);
     DrawText(text, x + 20, y + 10, 20, WHITE);
     DrawRectangleLines(x, y, width, height, WHITE);
-    
 }
 
 int main(void) {
     InitWindow(screenWidth, screenHeight, "Raylib Scene System");
-    
-    
+
+
     SetTargetFPS(60);
-    
+
     while (!WindowShouldClose()) {
         switch (currentScene) {
             case SCENE_TITLE:
@@ -48,7 +46,7 @@ int main(void) {
                     currentScene = SCENE_LEVEL;
                 }
                 break;
-            
+
             case SCENE_LEVEL:
                 if (IsKeyPressed(KEY_ESCAPE)) {
                     currentScene = SCENE_TITLE;
@@ -73,7 +71,7 @@ int main(void) {
                 DrawText("Level Scene - Press ESC to Return", 200, 200, 20, DARKGRAY);
                 break;
         }
-        
+
         EndDrawing();
     }
     
